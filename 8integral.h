@@ -1,32 +1,28 @@
 //Função Integral//
 
 
-double func_integra (double a, double b, double x, double k, int func){
-	double h=0.0001,n=0, x0=0, xn=0, xi=0,Ii=0;
-	x0=a;
-	xn=b;
-	n=(b-a)/h;
-	xi=a;
+double func_integra (int a, int b, double x, int k, int func){
+	double xi=0,Ii=0;
+	int n=10000, h, i,x0,xn;
+	h=(double)(b-a)/n;
 	
 	switch(func){
 		
 	case 1:
-		for(n==n;n>=1;n--){
-			xi=xi+h;
-			Ii=Ii+(func_constante(xi));
+		Ii=func_constante(a)+func_constante(b);
+		for(i=1;i<n-1;i++){
+			Ii=Ii+(func_constante(a+i*h));
 		}
-		x0=func_constante(x0);
-		xn=func_constante(xn);
-		return((h/2)*(x0+(2*Ii)+xn));
+		Ii=Ii*(h/2);
+		return(Ii);
 		break;
 	case 2:
-		for(n==n;n>=1;n--){
-			xi=xi+h;
-			Ii=Ii+func_eleva(xi,k);
+		Ii=func_eleva(a,k)+func_eleva(b,k);
+		for(i=1;i<n-1;i++){
+			Ii=Ii+func_eleva((a+i*h),k);
 		}
-		x0=func_eleva(x0,k);
-		xn=func_eleva(xn,k);
-		return((h/2)*(x0+(2*Ii)+xn));
+		Ii=Ii*(h/2);
+		return(Ii);
 		break;
 	case 3:
 		for(n==n;n>=1;n--){

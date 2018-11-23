@@ -7,7 +7,7 @@ double func_constante(double x){
 
 //Função Eleva//
 //Base é x e Expoente é k//
-double func_eleva(double k, double x){
+double func_eleva(double x, double k){
     return pow(x,k);
 }
 
