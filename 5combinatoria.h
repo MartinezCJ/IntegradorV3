@@ -82,7 +82,30 @@ arranj_simp(){
 	res=(fat(n)/fat(d));
 	system("cls");
 	printf("\nO valor do arranjo tomado %d a %d é: %d\n\n\n\n", p, p, res);
+}
+
+//ARRANJO COM REPETIÇÂO//
+
+int arranj_rep(){
+	char digitado[50];
+	int n=0, p=0;
+	double res=0;
 	
+	while(n==0){
+		system("cls");
+		printf("\nDigite o números de elementos n:\n");
+		so_numero(digitado);
+		n=atoi(digitado);
+	}
+	while(p==0){
+		system("cls");
+		printf("\nDigite o valor de P como os elementos são tomados:\n");
+		so_numero(digitado);
+		p=atoi(digitado);
+	}
+	res=pow(n,p);
+	system("cls");
+	printf("\nO valor do arranjo tomado %d a %d é: %.0f\n\n\n\n", p, p, res);
 }
 
 //MENU//
@@ -120,6 +143,11 @@ int menu_combinatoria(){
 	case 3:
 		system("cls");
 		arranj_simp();
+		system("pause");
+		break;
+	case 4:
+		system("cls");
+		arranj_rep();
 		system("pause");
 		break;
 	}
