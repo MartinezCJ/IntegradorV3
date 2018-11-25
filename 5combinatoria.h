@@ -132,6 +132,30 @@ int combi_simp(){
 	printf("\nO valor da combinação em subconjuntos de %d é: %d\n\n\n\n", p, res);
 }
 
+//COMBINAÇÂO COM REPETIÇÂO//
+
+int combi_rep(){
+	char digitado [50];
+	int n=0, p=0, d=0, res=0, div=0;
+	
+	while(n==0){
+		system("cls");
+		printf("\nDigite o números de elementos n:\n");
+		so_numero(digitado);
+		n=atoi(digitado);
+	}
+	while(p==0){
+		system("cls");
+		printf("\nDigite quantidade de elementos por subconjunto:\n");
+		so_numero(digitado);
+		p=atoi(digitado);
+	}
+	d=n-1;
+	res=(fat(n+p-1)/(fat(p)*fat(d)));
+	system("cls");
+	printf("\nO valor da combinação em subconjuntos de %d é: %d\n\n\n\n", p, res);
+}
+
 //MENU//
 
 int menu_combinatoria(){
@@ -177,6 +201,11 @@ int menu_combinatoria(){
 	case 5:
 		system("cls");
 		combi_simp();
+		system("pause");
+		break;
+	case 6:
+		system("cls");
+		combi_rep();
 		system("pause");
 		break;
 	}
