@@ -58,11 +58,11 @@ int main()
             break;
         case 5:
             system("cls");
-            menu_funcoes();
+            menu_combinatoria();
             break;
         case 6:
-            system("cls");
-
+        	system("cls");
+            menu_funcoes();
             break;
         case 7:
             system("cls");

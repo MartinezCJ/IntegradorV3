@@ -11,7 +11,7 @@ int matriz_soma(int x, int m, int n) {
         for (j = 1; j <= m; j++) {
             for (k = 1; k <= n; k++) {
                 system("cls");
-                printf("\nInsira o elemento A%d%d da Matriz %d: ", j, k, i);
+                printf("\nInsira o elemento %d%d da Matriz %d: ", j, k, i);
                 scanf("%d", &UI);
                 z[j-1][k-1] = z[j-1][k-1] + UI;
             }
@@ -22,7 +22,7 @@ int matriz_soma(int x, int m, int n) {
     for (i = 0; i < m; i++) {
                 printf("\n");
         for (j = 0; j < n; j++) {
-            printf("A%d%d: %d \t", i + 1, j + 1, z[i][j]);
+            printf("%d%d: %d \t", i + 1, j + 1, z[i][j]);
         }
     }
     printf("\n\n\n\n");
@@ -37,7 +37,7 @@ int matriz_sub(int x, int m, int n) {
         for (j = 1; j <= m; j++) {
             for (k = 1; k <= n; k++) {
                 system("cls");
-                printf("\nInsira o elemento A%d%d da Matriz %d: ", j, k, i);
+                printf("\nInsira o elemento %d%d da Matriz %d: ", j, k, i);
                 scanf("%d", &UI);
                 if (i > 1) {
                     z[j-1][k-1] = z[j-1][k-1] - UI;
@@ -51,7 +51,7 @@ int matriz_sub(int x, int m, int n) {
     for (i = 0; i < m; i++) {
                 printf("\n");
         for (j = 0; j < n; j++) {
-            printf("A%d%d: %d ", i + 1, j + 1, z[i][j]);
+            printf("%d%d: %d ", i + 1, j + 1, z[i][j]);
         }
     }
 }
@@ -201,10 +201,10 @@ int menu_matriz(){
 	{
 	case 1:
 		while(x<2){
-			system("cls");
-			printf("\nNumero de matrizes que serao somadas: ");
-			so_numero(digitado);
-			x=atoi(digitado);
+		system("cls");
+		printf("\nNumero de matrizes que serao somadas: ");
+		so_numero(digitado);
+		x=atoi(digitado);
 		}
 		while (m==0){
 		system("cls");
@@ -260,6 +260,7 @@ int menu_matriz(){
         } else {
             system("cls");
             printf("\nImpossivel fazer a conta.\n");
+            system("pause");
         }
 		break;
 	
