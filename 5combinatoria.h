@@ -108,6 +108,30 @@ int arranj_rep(){
 	printf("\nO valor do arranjo tomado %d a %d é: %.0f\n\n\n\n", p, p, res);
 }
 
+//COMBINAÇÂO SIMPLES//
+
+int combi_simp(){
+	char digitado [50];
+	int n=0, p=0, d=0, res=0, div=0;
+	
+	while(n==0){
+		system("cls");
+		printf("\nDigite o números de elementos n:\n");
+		so_numero(digitado);
+		n=atoi(digitado);
+	}
+	while(p==0||p>n){
+		system("cls");
+		printf("\nDigite quantidade de elementos por subconjunto:\n");
+		so_numero(digitado);
+		p=atoi(digitado);
+	}
+	d=n-p;
+	res=(fat(n)/(fat(p)*fat(d)));
+	system("cls");
+	printf("\nO valor da combinação em subconjuntos de %d é: %d\n\n\n\n", p, res);
+}
+
 //MENU//
 
 int menu_combinatoria(){
@@ -148,6 +172,11 @@ int menu_combinatoria(){
 	case 4:
 		system("cls");
 		arranj_rep();
+		system("pause");
+		break;
+	case 5:
+		system("cls");
+		combi_simp();
 		system("pause");
 		break;
 	}
